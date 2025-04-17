@@ -1,59 +1,64 @@
-# SantiagoBlues
+💻 Desarrollo local
+Este proyecto fue generado con Angular CLI versión 19.2.8.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
+🟢 Servidor de desarrollo
+Para iniciar el proyecto en modo desarrollo:
 
-## Development server
-
-To start a local development server, run:
-
-```bash
+bash
+Copiar
 ng serve
-```
+Luego visita en tu navegador:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+arduino
+Copiar
+http://localhost:4200/
+La app se recargará automáticamente al modificar archivos fuente.
 
-## Code scaffolding
+🛠️ Code scaffolding (generación de componentes)
+Angular CLI permite generar componentes fácilmente:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+bash
+Copiar
+ng generate component nombre-del-componente
+Para ver todas las opciones disponibles:
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
+bash
+Copiar
 ng generate --help
-```
 
-## Building
+🧱 Compilar la app
+Para compilar el proyecto en modo producción:
 
-To build the project run:
-
-```bash
+bash
+Copiar
 ng build
-```
+Los archivos generados se almacenan en la carpeta dist/.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+🧪 Pruebas unitarias
+Para ejecutar pruebas unitarias con Karma:
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
+bash
+Copiar
 ng test
-```
+🧪 Pruebas end-to-end (e2e)
+Angular no incluye e2e por defecto. Si tienes un framework instalado (como Cypress), puedes correr:
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
+bash
+Copiar
 ng e2e
-```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+📥 Clonar el repositorio
+bash
+Copiar
+git clone https://github.com/AlvaroPdev/SantiagoBlues.git
+cd SantiagoBlues
+🔀 Cambiar de rama
+bash
+Copiar
+git checkout Alvaro   # Cambia por tu rama: Alvaro, Nicolas o Francisca
+⬆️ Subir cambios a tu rama
+bash
+Copiar
+git add .
+git commit -m "Descripción clara de tus cambios"
+git push origin Alvaro
