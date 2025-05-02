@@ -1,0 +1,81 @@
+<section class="servicios">
+  <div class="container">
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <p class="section-description">Soluciones digitales integrales para potenciar tu presencia en línea</p>
+    
+    <div class="servicios-grid">
+      <div class="servicio-card" *ngFor="let servicio of servicios">
+        <div class="servicio-icon">
+          <i [class]="'fa ' + servicio.icono"></i>
+        </div>
+        <h3>{{servicio.titulo}}</h3>
+        <p class="servicio-descripcion">{{servicio.descripcion}}</p>
+        
+        <ul class="servicio-caracteristicas">
+          <li *ngFor="let caracteristica of servicio.caracteristicas">
+            <i class="fa fa-check"></i> {{caracteristica}}
+          </li>
+        </ul>
+        
+        <button class="servicio-button" (click)="abrirModal(servicio)">Más Información</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Servicio -->
+  <div class="modal" [class.show]="modalAbierto">
+    <div class="modal-content">
+      <span class="close" (click)="cerrarModal()">&times;</span>
+      
+      <div class="modal-header">
+        <div class="modal-icon">
+          <i [class]="'fa ' + servicioSeleccionado?.icono"></i>
+        </div>
+        <h2>{{servicioSeleccionado?.titulo}}</h2>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>Descripción Detallada</h3>
+          <p>{{servicioSeleccionado?.descripcionDetallada}}</p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Beneficios</h3>
+          <ul class="modal-lista">
+            <li *ngFor="let beneficio of servicioSeleccionado?.beneficios">
+              <i class="fa fa-check-circle"></i> {{beneficio}}
+            </li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3>Proceso de Trabajo</h3>
+          <ol class="modal-lista">
+            <li *ngFor="let paso of servicioSeleccionado?.proceso">
+              <span class="paso-numero">{{paso.numero}}</span>
+              <div class="paso-contenido">
+                <h4>{{paso.titulo}}</h4>
+                <p>{{paso.descripcion}}</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="modal-section">
+          <h3>¿Por qué elegirnos?</h3>
+          <ul class="modal-lista">
+            <li *ngFor="let razon of servicioSeleccionado?.razones">
+              <i class="fa fa-star"></i> {{razon}}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="modal-button" (click)="cerrarModal()">Cerrar</button>
+        <button class="modal-button primary" (click)="contactar()">Contactar</button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<nav class="navbar">
+  <div class="navbar-top">
+    <div class="contact-info">
+      <a href="tel:+56912345678" class="contact-link">
+        <i class="fa fa-phone"></i> +56 9 1234 5678
+      </a>
+      <a href="mailto:info@santiagoblues.cl" class="contact-link">
+        <i class="fa fa-envelope"></i> info&#64;santiagoblues.cl
+      </a>
+    </div>
+    
+    <div class="social-links">
+      <a *ngFor="let link of socialLinks" [href]="link.url" target="_blank" class="social-link">
+        <i [class]="link.icon"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="navbar-main">
+    <div class="logo">
+      <h1>SantiagoBlues</h1>
+    </div>
+
+    <div class="nav-links">
+      <a *ngFor="let link of navLinks" 
+        [routerLink]="link.path" 
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        {{link.label}}
+      </a>
+    </div>
+  </div>
+</nav>
