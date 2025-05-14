@@ -1,67 +1,26 @@
 <div class="container">
-    <button class="schedule-button" (click)="openModal()">Agendar Reunión</button>
-  
-    <!-- Modal -->
-    <div class="modal" [class.show]="showModal">
-      <div class="modal-content">
-        <span class="close" (click)="closeModal()">&times;</span>
-        <h2>Agendar Reunión</h2>
-        
-        <div class="modal-body">
-          <!-- Calendario -->
-          <div class="calendar-section">
-            <div class="calendar-header">
-              <button (click)="previousMonth()"><i class="fa fa-chevron-left"></i></button>
-              <h3>{{currentMonth}} {{currentYear}}</h3>
-              <button (click)="nextMonth()"><i class="fa fa-chevron-right"></i></button>
-            </div>
-            
-            <div class="calendar-grid">
-              <div class="calendar-weekday" *ngFor="let day of weekDays">{{day}}</div>
-              <div class="calendar-day" 
-                   *ngFor="let day of calendarDays" 
-                   [class.selected]="isSelected(day)"
-                   [class.today]="isToday(day)"
-                   [class.other-month]="!isCurrentMonth(day)"
-                   (click)="selectDate(day)">
-                {{day.getDate()}}
-              </div>
-            </div>
-            
-            <div class="time-slots">
-              <h4>Horarios Disponibles</h4>
-              <div class="slots-grid">
-                <button *ngFor="let slot of timeSlots" 
-                        [class.selected]="selectedTime === slot"
-                        (click)="selectTime(slot)">
-                  {{slot}}
-                </button>
-              </div>
-            </div>
-          </div>
+  <div class="meeting-intro">
+    <h2 class="intro-title">Impulsa tu presencia online</h2>
+    <p class="intro-subtitle">Experto en estrategias digitales para tu negocio</p>
+  </div>
 
-          <!-- Formulario -->
-          <form (ngSubmit)="submitForm()" class="meeting-form">
-            <div class="form-group">
-              <label for="name">Nombre</label>
-              <input type="text" id="name" [(ngModel)]="meetingData.name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" [(ngModel)]="meetingData.email" name="email" required>
-            </div>
-            
-    
-            
-            <div class="selected-info">
-              <p><strong>Fecha seleccionada:</strong> {{selectedDate | date:'longDate'}}</p>
-              <p><strong>Hora seleccionada:</strong> {{selectedTime}}</p>
-            </div>
-            
-            <button type="submit" class="submit-button" [disabled]="!isFormValid()">Agendar en Google Meet</button>
-          </form>
-        </div>
+  <div class="button-wrapper">
+    <button class="schedule-button" (click)="openModal()">Agendar Reunión</button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" [class.show]="showModal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+
+      <div class="calendly-wrapper">
+        <iframe
+          src="https://calendly.com/santiagoblues-app/45min"
+          frameborder="0"
+          allowfullscreen
+          class="calendly-iframe">
+        </iframe>
       </div>
     </div>
   </div>
+</div>
