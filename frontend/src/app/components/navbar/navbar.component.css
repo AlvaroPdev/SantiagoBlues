@@ -16,7 +16,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact-info {
@@ -131,6 +130,10 @@
 }
 
 @media (max-width: 768px) {
+  .social-link{
+    display: none;
+  }
+
   .navbar-top {
     padding: 0.5rem 1rem;
     flex-direction: column;
@@ -138,9 +141,10 @@
   }
   
   .contact-info {
-    flex-direction: column;
-    gap: 0.5rem;
+    /* flex-direction: column; */
+    gap: 1.5rem;
     text-align: center;
+
   }
   
   .navbar-main {

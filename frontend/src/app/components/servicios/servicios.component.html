@@ -1,3 +1,17 @@
+<!-- SECCIÓN PERFIL PROFESIONAL -->
+<section class="perfil-profesional">
+  <div class="perfil-container">
+    <div class="foto-perfil">
+      <img src="" alt="">
+    </div>
+    <div class="info-perfil">
+      <h2>Nombre del Profesional</h2>
+      <span class="especialidad">Especialidad: Estrategias Digitales</span>
+      <p class="experiencia">Experiencia: 5 años</p>
+    </div>
+  </div>
+</section>
+
 <section class="servicios">
   <div class="container">
     <h2 class="section-title">Nuestros Servicios</h2>
@@ -10,36 +24,30 @@
         </div>
         <h3>{{servicio.titulo}}</h3>
         <p class="servicio-descripcion">{{servicio.descripcion}}</p>
-        
         <ul class="servicio-caracteristicas">
           <li *ngFor="let caracteristica of servicio.caracteristicas">
             <i class="fa fa-check"></i> {{caracteristica}}
           </li>
         </ul>
-        
         <button class="servicio-button" (click)="abrirModal(servicio)">Más Información</button>
       </div>
     </div>
   </div>
 
-  <!-- Modal de Servicio -->
   <div class="modal" [class.show]="modalAbierto">
     <div class="modal-content">
       <span class="close" (click)="cerrarModal()">&times;</span>
-      
       <div class="modal-header">
         <div class="modal-icon">
           <i [class]="'fa ' + servicioSeleccionado?.icono"></i>
         </div>
         <h2>{{servicioSeleccionado?.titulo}}</h2>
       </div>
-
       <div class="modal-body">
         <div class="modal-section">
           <h3>Descripción Detallada</h3>
           <p>{{servicioSeleccionado?.descripcionDetallada}}</p>
         </div>
-
         <div class="modal-section">
           <h3>Beneficios</h3>
           <ul class="modal-lista">
@@ -48,7 +56,6 @@
             </li>
           </ul>
         </div>
-
         <div class="modal-section">
           <h3>Proceso de Trabajo</h3>
           <ol class="modal-lista">
@@ -61,7 +68,6 @@
             </li>
           </ol>
         </div>
-
         <div class="modal-section">
           <h3>¿Por qué elegirnos?</h3>
           <ul class="modal-lista">
@@ -71,7 +77,6 @@
           </ul>
         </div>
       </div>
-
       <div class="modal-footer">
         <button class="modal-button" (click)="cerrarModal()">Cerrar</button>
         <button class="modal-button primary" (click)="contactar()">Contactar</button>
