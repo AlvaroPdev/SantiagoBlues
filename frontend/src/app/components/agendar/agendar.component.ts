@@ -14,23 +14,15 @@ export class AgendarComponent {
   openModal(): void {
     this.showModal = true;
     document.body.style.overflow = 'hidden';
-
-    setTimeout(() => {
-      const calendlyContainer = document.getElementById('calendly-inline-widget');
-      if (calendlyContainer) {
-        calendlyContainer.innerHTML = ''; // limpiar por si se reabre
-
-        (window as any).Calendly.initInlineWidget({
-          url: 'https://calendly.com/santiagoblues-app/30min',
-          parentElement: calendlyContainer,
-          prefill: {},
-        });
-      }
-    }, 0);
   }
 
   closeModal(): void {
     this.showModal = false;
     document.body.style.overflow = 'auto';
+  }
+
+  onButtonClick(event: MouseEvent): void {
+    const button = event.currentTarget as HTMLElement;
+    button.blur(); // Remover el foco después del clic
   }
 }
