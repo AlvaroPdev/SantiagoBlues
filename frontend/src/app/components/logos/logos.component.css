@@ -1,0 +1,30 @@
+.logos-container {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa; /* Color de fondo similar al de la imagen */
+  }
+  
+  .logos-container h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Columnas responsivas */
+    gap: 30px; /* Espacio entre logos */
+    justify-items: center; /* Centrar logos en cada celda */
+    align-items: center; /* Centrar logos verticalmente */
+    max-width: 960px; /* Ancho máximo de la cuadrícula */
+    margin: 0 auto; /* Centrar la cuadrícula */
+  }
+  
+  .logos-grid img {
+    display: block; /* Eliminar espacio extra debajo de la imagen */
+    max-width: 140px; /* Tamaño máximo del logo */
+    height: auto; /* Mantener proporción */
+    opacity: 0.8; /* Opcional: reducir opacidad */
+    transition: all 0.3s ease; /* Transición suave para hover */
+  }
+  

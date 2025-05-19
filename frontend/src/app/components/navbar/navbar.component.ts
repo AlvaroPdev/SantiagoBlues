@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive, RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
@@ -27,10 +27,12 @@ export class NavbarComponent {
   
 
   navLinks = [
-    { path: '/', label: 'Inicio' },
-    { path: '/servicios', label: 'Servicios' },
-    { path: '/contacto', label: 'Contacto' },
+    { label: 'Inicio', href: '#agendar' },
+    { label: 'Servicios', href: '#servicios' },
+    { label: 'Contacto', href: '#contacto' },
   ];
+  
+  
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

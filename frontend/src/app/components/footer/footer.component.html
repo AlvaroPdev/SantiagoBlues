@@ -1,25 +1,30 @@
 <footer class="footer">
   <div class="footer-content">
     <div class="footer-section">
-      <h3>SantiagoBlues</h3>
-      <p>SantiagoBlues es tu socio estratégico en transformación digital. Ayudamos a emprendedores y empresas a posicionarse en línea con soluciones modernas, accesibles y efectivas. Contáctanos y da el primer paso hacia el futuro de tu negocio.</p>
+      <h3>Santiago<span class="logo-accent">Blues</span></h3>
+      <p>Tu socio estratégico en transformación digital. Ayudamos a emprendedores y empresas a posicionarse en línea con soluciones modernas, accesibles y efectivas. Contáctanos y da el primer paso hacia el futuro de tu negocio.</p>
+      <div class="contact-info">
+        <i class="fa fa-phone"></i>
+        <span>+56 9 1234 5678</span>
+      </div>
+      <div class="contact-info">
+        <i class="fa fa-envelope"></i>
+        <span>info&#64;santiagoblues.cl</span>
+      </div>
     </div>
     <div class="footer-section">
-      <h3>Enlaces Rápidos</h3>
+      <h3>Servicios</h3>
       <ul>
-        <li><a routerLink="/">Inicio</a></li>
-        <li><a routerLink="/about">Servicios</a></li>
-        <li><a routerLink="/contact">Contacto</a></li>
+        <li><a href="#servicios">Diseño Web</a></li>
+        <li><a href="#servicios">Desarrollo Web</a></li>
+        <li><a href="#servicios">Marketing Digital</a></li>
+        <li><a href="#servicios">SEO</a></li>
       </ul>
-    </div>
-    <div class="footer-section">
-      <h3>Contacto</h3>
-      <p><i class="fa fa-map-marker"></i> Santiago, Chile</p>
     </div>
     <div class="footer-section">
       <h3>Síguenos</h3>
       <div class="social-links">
-        <a *ngFor="let link of socialLinks" [href]="link.url" target="_blank" class="social-link"><i [class]="link.icon"></i></a>
+        <a *ngFor="let link of socialLinks" [href]="link.url" target="_blank"><i [class]="link.icon"></i></a>
       </div>
     </div>
   </div>
