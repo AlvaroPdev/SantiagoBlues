@@ -1,0 +1,78 @@
+.perfil-container {
+  background-color: #000000; /* Un gris oscuro más profundo */
+  padding: 30px 30px; /* Más espacio vertical y horizontal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e0e0e0; /* Color de texto gris claro */
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.perfil-avatar {
+  width: 150px; /* Un poco más grande */
+  height: 150px;
+  background-color: #555; /* Un gris intermedio */
+  border-radius: 50%;
+  margin-right: 40px; /* Más espacio a la derecha */
+  flex-shrink: 0; /* Evitar que se encoja */
+  overflow: hidden; /* Oculta partes de la imagen que se salgan del borde redondo */
+  /* Añadir un borde sutil */
+  border: 3px solid #777;
+}
+
+.perfil-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.perfil-info {
+  text-align: left; /* Alinear texto a la izquierda */
+}
+
+.perfil-info h2 {
+  margin-top: 0;
+  margin-bottom: 8px; /* Espacio reducido */
+  font-size: 32px; /* Un poco más grande */
+  font-weight: 600; /* Ligeramente más negrita */
+  color: #ffffff; /* Nombre en blanco */
+}
+
+.perfil-especialidad {
+  display: inline-block;
+  background-color: transparent; /* Fondo transparente */
+  border: 1px solid #777; /* Borde sutil */
+  padding: 6px 12px;
+  border-radius: 20px; /* Bordes más redondeados (píldora) */
+  margin-bottom: 15px; /* Más espacio debajo */
+  font-size: 15px; /* Un poco más grande */
+  color: #e0e0e0; /* Color de texto */
+}
+
+.perfil-experiencia {
+  margin-top: 0;
+  font-size: 17px; /* Un poco más grande */
+  color: #bdbdbd; /* Gris más suave */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .perfil-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .perfil-avatar {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .perfil-info,
+  .perfil-info h2,
+  .perfil-especialidad,
+  .perfil-experiencia {
+    text-align: center;
+  }
+}

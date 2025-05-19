@@ -1,0 +1,17 @@
+<div class="chatbot-container" [class.minimized]="isMinimized">
+    <div class="chat-header">
+        <span>Asistente Santiago Blues</span>
+        <button class="minimize-btn" (click)="toggleMinimize()">
+            <i class="fas" [ngClass]="isMinimized ? 'fa-compress' : 'fa-chevron-down'"></i>
+        </button>
+    </div>
+  
+    <div class="chat-body" id="chat-body" *ngIf="!isMinimized">
+      <div *ngFor="let msg of mensajes" [ngClass]="msg.tipo">{{ msg.texto }}</div>
+    </div>
+  
+    <div class="chat-input-container" *ngIf="!isMinimized">
+        <input [(ngModel)]="mensajeInput" (keydown.enter)="enviarMensaje()" placeholder="Escribe tu pregunta..." />
+        <button (click)="enviarMensaje()">Enviar</button>
+    </div>
+</div>

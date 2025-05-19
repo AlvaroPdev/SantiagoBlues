@@ -9,9 +9,13 @@
     </div>
   </div>
   <div class="navbar-main">
-    <div class="logo"><h1>SantiagoBlues</h1></div>
+    <div class="logo">
+      <h1>Santiago<span class="logo-accent">Blues</span></h1>
+    </div>
     <div class="nav-links">
-      <a *ngFor="let link of navLinks" [routerLink]="link.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{link.label}}</a>
+      <a *ngFor="let link of navLinks" [href]="link.href">
+        {{ link.label }}
+     </a>
     </div>
   </div>
 </nav>
