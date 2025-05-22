@@ -1,13 +1,6 @@
 <div class="logos-container">
     <h2>Algunas de las herramientas que usamos frecuentemente</h2>
     <div class="logos-grid">
-      <img src="assets/logos/google-analytics-2.svg" alt="Google Analytics Logo">
-      <img src="assets/logos/Google_Ads_icon.svg" alt="Google Ads Logo">
-      <img src="assets/logos/facebook-ads.svg" alt="Facebook Ads Logo">
-      <img src="assets/logos/hubspot.svg" alt="HubSpot Logo">
-      <img src="assets/logos/mailchimp.svg" alt="Mailchimp Logo">
-      <img src="assets/logos/shopify-2.svg" alt="Shopify Logo">
-      <img src="assets/logos/wordpress-icon.svg" alt="WordPress Logo">
-      <img src="assets/logos/amazon-web-services.svg" alt="Amazon Web Services Logo">
+      <img *ngFor="let logo of logos" [src]="logo.src" [alt]="logo.alt">
     </div>
   </div> 

@@ -27,7 +27,7 @@ export class NavbarComponent {
   
 
   navLinks = [
-    { label: 'Inicio', href: '#agendar' },
+    { label: 'Agendar', href: '#agendar' },
     { label: 'Servicios', href: '#servicios' },
     { label: 'Contacto', href: '#contacto' },
   ];

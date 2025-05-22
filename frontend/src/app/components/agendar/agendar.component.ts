@@ -20,9 +20,4 @@ export class AgendarComponent {
     this.showModal = false;
     document.body.style.overflow = 'auto';
   }
-
-  onButtonClick(event: MouseEvent): void {
-    const button = event.currentTarget as HTMLElement;
-    button.blur(); // Remover el foco después del clic
-  }
 }

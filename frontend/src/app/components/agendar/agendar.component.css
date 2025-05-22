@@ -33,11 +33,15 @@
   font-size: 2rem;
   font-weight: bold;
   color: #333;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
 }
 
 .intro-subtitle {
   font-size: 1.2rem;
   color: #666;
+  padding: 0 1rem;
+  line-height: 1.5;
 }
 
 .button-wrapper {
@@ -129,6 +133,19 @@
 
 /* --------- Responsive --------- */
 @media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .intro-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .intro-subtitle {
+    font-size: 1.1rem;
+  }
+
   .modal-content {
     padding: 0;
     height: 90vh;
@@ -136,5 +153,21 @@
 
   .modal-title {
     font-size: 1.5rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .intro-subtitle {
+    font-size: 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.3rem;
   }
 }
