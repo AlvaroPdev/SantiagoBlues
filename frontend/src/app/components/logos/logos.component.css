@@ -21,10 +21,25 @@
   }
   
   .logos-grid img {
-    display: block; /* Eliminar espacio extra debajo de la imagen */
-    max-width: 140px; /* Tamaño máximo del logo */
-    height: auto; /* Mantener proporción */
-    opacity: 0.8; /* Opcional: reducir opacidad */
-    transition: all 0.3s ease; /* Transición suave para hover */
+    display: block;
+    width: 120px; /* Tamaño fijo en lugar de max-width */
+    height: 40px; /* Altura fija para mantener proporción */
+    object-fit: contain; /* Asegura que la imagen se ajuste manteniendo su proporción */
+    opacity: 0.8;
+    transition: all 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .logos-grid img {
+        width: 100px;
+        height: 35px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logos-grid img {
+        width: 80px;
+        height: 30px;
+    }
   }
   

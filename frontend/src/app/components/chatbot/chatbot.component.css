@@ -4,82 +4,17 @@
     right: 20px;
     width: 350px;
     max-height: 600px;
-    background: #ffffff;
+    background: #fff;
     border-radius: 15px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     z-index: 9999;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    transition: all 0.3s ease; /* Animación sutil para minimizar/maximizar */
-  }
-  
-  /* Estilos responsivos */
-  @media screen and (max-width: 768px) {
-    .chatbot-container {
-      width: calc(100% - 40px);
-      right: 20px;
-      left: 20px;
-      bottom: 20px;
-      max-height: 80vh;
-    }
+    font-family: system-ui, -apple-system, sans-serif;
+}
 
-    .chat-body {
-      max-height: 60vh;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    .chatbot-container {
-      width: calc(100% - 20px);
-      right: 10px;
-      left: 10px;
-      bottom: 10px;
-    }
-
-    .chat-header {
-      padding: 12px;
-      font-size: 14px;
-    }
-
-    .chat-body {
-      padding: 15px;
-      font-size: 13px;
-    }
-
-    .user, .bot {
-      padding: 8px 12px;
-      font-size: 13px;
-    }
-
-    input {
-      padding: 12px;
-      font-size: 13px;
-    }
-
-    button {
-      padding: 10px;
-      font-size: 13px;
-    }
-  }
-
-  /* Estilos para pantallas muy pequeñas */
-  @media screen and (max-width: 320px) {
-    .chatbot-container {
-      width: 100%;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      border-radius: 15px 15px 0 0;
-    }
-
-    .chatbot-container.minimized {
-      border-radius: 15px 15px 0 0;
-    }
-  }
-  
-  .chatbot-container.minimized {
+.chatbot-container.minimized {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -90,9 +25,39 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-  }
-  
-  .chat-header {
+}
+
+.chatbot-container.minimized .chat-header {
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatbot-container.minimized .chat-header span {
+    display: none;
+}
+
+.chatbot-container.minimized .minimize-btn {
+    position: static;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatbot-container.minimized .minimize-btn i {
+    display: block;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.chat-header {
     background: var(--color-primary, #2196f3);
     color: white;
     padding: 15px;
@@ -106,9 +71,9 @@
     cursor: pointer;
     width: 100%;
     height: 100%;
-  }
-  
-  .minimize-btn {
+}
+
+.minimize-btn {
     background: none;
     border: none;
     color: white;
@@ -123,48 +88,46 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    box-sizing: border-box; /* Asegurar modelo de caja consistente */
-  }
+    box-sizing: border-box;
+}
 
-
-  .chat-body {
+.chat-body {
     flex-grow: 1;
     padding: 20px;
     overflow-y: auto;
     font-size: 14px;
     background-color: #f8f9fa;
     max-height: 400px;
-  }
-  
-  .user {
-    text-align: right;
+}
+
+.user, .bot {
     margin: 10px 0;
     padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 80%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.user {
+    text-align: right;
     background: var(--color-primary, #2196f3);
     color: white;
-    border-radius: 15px 15px 0 15px;
-    max-width: 80%;
     margin-left: auto;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  
-  .bot {
+    border-radius: 15px 15px 0 15px;
+}
+
+.bot {
     text-align: left;
-    margin: 10px 0;
-    padding: 12px 16px;
     background: white;
     color: #333;
     border-radius: 15px 15px 15px 0;
-    max-width: 80%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    line-height: 1.5;
-  }
-  
-  .chat-input-container {
+}
+
+.chat-input-container {
     border-top: 1px solid #e9ecef;
-  }
-  
-  input {
+}
+
+input {
     border: none;
     padding: 15px;
     font-size: 14px;
@@ -172,57 +135,147 @@
     box-sizing: border-box;
     outline: none;
     background: white;
-    transition: box-shadow 0.2s ease; /* Transición sutil en focus */
-  }
-  
-  input:focus {
-    box-shadow: inset 0 0 0 2px #007bff;
-  }
-  
-  button {
+}
+
+button {
     padding: 12px;
     border: none;
-    background: var(--color-text, #000000);
+    background: var(--color-text, #000);
     color: white;
     font-weight: 600;
     cursor: pointer;
     width: 100%;
-  }
+}
 
-  
-  /* Estilo para el scrollbar */
-  .chat-body::-webkit-scrollbar {
+.chat-body::-webkit-scrollbar {
     width: 6px;
-  }
-  
-  .chat-body::-webkit-scrollbar-track {
+}
+
+.chat-body::-webkit-scrollbar-track {
     background: #f1f1f1;
-  }
-  
-  .chat-body::-webkit-scrollbar-thumb {
+}
+
+.chat-body::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 3px;
-  }
-  
+}
 
-  
-  /* Ocultar el texto del título cuando está minimizado */
-  .chatbot-container.minimized .chat-header span {
-    display: none;
-  }
-  
-  /* Asegurar que el icono dentro del botón esté centrado cuando el chat está minimizado */
-  .chatbot-container.minimized .minimize-btn i {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 24px;
-    width: auto;
-    height: auto;
-    line-height: 1;
-    padding: 0;
-    margin: 0;
-  }
+@media screen and (max-width: 768px) {
+    .chatbot-container {
+        width: calc(100% - 40px);
+        right: 20px;
+        left: 20px;
+        bottom: 20px;
+        max-height: 80vh;
+    }
+    .chat-body {
+        max-height: 60vh;
+        padding: 15px;
+    }
+    .user, .bot {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+        max-width: 85%;
+    }
+    .chat-header {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    .minimize-btn {
+        width: 35px;
+        height: 35px;
+    }
+    .chatbot-container.minimized {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .chatbot-container.minimized .minimize-btn i {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .chatbot-container {
+        width: calc(100% - 20px);
+        right: 10px;
+        left: 10px;
+        bottom: 10px;
+        max-height: 70vh;
+    }
+    .chat-header {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+    .chat-body {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+    .user, .bot {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+        max-width: 90%;
+    }
+    input {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+    button {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+    .minimize-btn {
+        width: 30px;
+        height: 30px;
+    }
+    .chatbot-container.minimized {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
+    }
+    .chatbot-container.minimized .minimize-btn i {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .chatbot-container {
+        width: 100%;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        border-radius: 15px 15px 0 0;
+        max-height: 100vh;
+    }
+    .chatbot-container.minimized {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        bottom: 20px;
+        right: 20px;
+    }
+    .chat-header {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+    .chat-body {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+    .user, .bot {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+        max-width: 95%;
+    }
+    input {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+    button {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+}
     

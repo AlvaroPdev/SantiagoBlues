@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-contacto',
   standalone: true,
@@ -12,32 +11,31 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './contacto.component.css'
 })
 export class ContactoComponent {
-  
   contactForm: FormGroup;
+  mensajeExito = '';
+  mensajeError = '';
 
-  mensajeExito='';
-  mensajeError='';
-
-  constructor(private fb:FormBuilder, private http: HttpClient){
-    this.contactForm= this.fb.group({
-      nombre:['',Validators.required],
-      empresa:['',Validators.required],
-      web:['',Validators.required],
-      email:['',[Validators.required, Validators.email]],
-      telefono:[''],
-      mensaje:['',Validators.required]
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient
+  ) {
+    this.contactForm = this.fb.group({
+      nombre: ['', Validators.required],
+      empresa: ['', Validators.required],
+      web: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      telefono: [''],
+      mensaje: ['', Validators.required]
     });
   }
 
-  
-
-  onSubmit() {
+  onSubmit(): void {
     if (this.contactForm.valid) {
       this.http.post('http://localhost:3000/contacto', this.contactForm.value).subscribe({
         next: () => {
           this.mensajeExito = 'Mensaje enviado con éxito.';
           this.mensajeError = '';
-          this.contactForm.reset();
+          this.resetForm();
         },
         error: () => {
           this.mensajeError = 'Error al enviar el mensaje.';
@@ -47,9 +45,14 @@ export class ContactoComponent {
     }
   }
 
+  private resetForm(): void {
+    this.contactForm.reset({
+      nombre: '',
+      empresa: '',
+      web: '',
+      email: '',
+      telefono: '',
+      mensaje: ''
+    });
+  }
 }
-// if(this.contactForm.valid){
-    //   // manejar aqui la logica del envio del formulario, enviandolo a un servicio
-    //   console.log(this.contactForm.value);
-    //   this.contactForm.reset();
-    // }

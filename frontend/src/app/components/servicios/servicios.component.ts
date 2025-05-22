@@ -26,205 +26,76 @@ export class ServiciosComponent {
 
   servicios: Servicio[] = [
     {
-      titulo: 'Sitios Web',
-      icono: 'fa-laptop-code',
-      descripcion: 'Diseño y desarrollo de sitios web modernos y responsivos',
-      caracteristicas: [
-        'Diseño personalizado',
-        'Optimización SEO',
-        'Responsive Design',
-        'Integración de redes sociales'
-      ],
-      descripcionDetallada: 'Creamos sitios web que no solo se ven bien, sino que también funcionan perfectamente. Nuestro enfoque combina diseño atractivo con funcionalidad robusta, asegurando una experiencia de usuario excepcional.',
-      beneficios: [
-        'Mayor visibilidad en línea',
-        'Mejor experiencia de usuario',
-        'Optimización para motores de búsqueda',
-        'Diseño adaptable a todos los dispositivos'
-      ],
+      titulo: 'Diseño Web',
+      icono: 'fa-paint-brush',
+      descripcion: 'Creamos sitios web modernos y atractivos que reflejan la identidad de tu marca.',
+      caracteristicas: ['Diseño responsivo', 'Optimización SEO', 'Interfaz intuitiva'],
+      descripcionDetallada: 'Nuestro servicio de diseño web combina creatividad y funcionalidad para crear experiencias digitales únicas que cautivan a tus visitantes.',
+      beneficios: ['Mayor visibilidad en línea', 'Mejor experiencia de usuario', 'Conversión optimizada'],
       proceso: [
-        {
-          numero: 1,
-          titulo: 'Análisis y Planificación',
-          descripcion: 'Entendemos tus necesidades y objetivos para crear una estrategia efectiva.'
-        },
-        {
-          numero: 2,
-          titulo: 'Diseño',
-          descripcion: 'Creamos un diseño único que refleja la identidad de tu marca.'
-        },
-        {
-          numero: 3,
-          titulo: 'Desarrollo',
-          descripcion: 'Implementamos el diseño con las últimas tecnologías web.'
-        },
-        {
-          numero: 4,
-          titulo: 'Pruebas y Optimización',
-          descripcion: 'Aseguramos que todo funcione perfectamente en todos los dispositivos.'
-        }
+        { numero: 1, titulo: 'Análisis', descripcion: 'Estudiamos tus necesidades y objetivos' },
+        { numero: 2, titulo: 'Diseño', descripcion: 'Creamos un diseño personalizado' },
+        { numero: 3, titulo: 'Desarrollo', descripcion: 'Implementamos el diseño con las mejores prácticas' }
       ],
-      razones: [
-        'Equipo de expertos en desarrollo web',
-        'Tecnologías de vanguardia',
-        'Soporte continuo',
-        'Resultados medibles'
-      ]
+      razones: ['Equipo experto en diseño', 'Tecnologías modernas', 'Soporte continuo']
     },
     {
-      titulo: 'Gestión Mensual Web',
-      icono: 'fa-cogs',
-      descripcion: 'Mantenimiento y actualización constante de tu sitio web',
-      caracteristicas: [
-        'Actualizaciones regulares',
-        'Monitoreo de seguridad',
-        'Backups automáticos',
-        'Soporte técnico'
-      ],
-      descripcionDetallada: 'Mantenemos tu sitio web actualizado, seguro y funcionando al máximo rendimiento. Nuestro servicio de gestión mensual te permite enfocarte en tu negocio mientras nosotros nos encargamos de tu presencia digital.',
-      beneficios: [
-        'Sitio web siempre actualizado',
-        'Protección contra amenazas',
-        'Mejor rendimiento',
-        'Soporte técnico inmediato'
-      ],
+      titulo: 'Desarrollo de Aplicaciones',
+      icono: 'fa-code',
+      descripcion: 'Desarrollamos aplicaciones web y móviles a medida para tu negocio.',
+      caracteristicas: ['Desarrollo personalizado', 'Tecnologías modernas', 'Escalabilidad'],
+      descripcionDetallada: 'Creamos aplicaciones robustas y escalables que automatizan y optimizan tus procesos de negocio.',
+      beneficios: ['Automatización de procesos', 'Mayor eficiencia', 'Reducción de costos'],
       proceso: [
-        {
-          numero: 1,
-          titulo: 'Análisis Inicial',
-          descripcion: 'Evaluamos el estado actual de tu sitio web.'
-        },
-        {
-          numero: 2,
-          titulo: 'Plan de Mantenimiento',
-          descripcion: 'Creamos un plan personalizado para tu sitio.'
-        },
-        {
-          numero: 3,
-          titulo: 'Implementación',
-          descripcion: 'Ejecutamos las actualizaciones y mejoras necesarias.'
-        },
-        {
-          numero: 4,
-          titulo: 'Monitoreo Continuo',
-          descripcion: 'Vigilamos el rendimiento y seguridad de tu sitio.'
-        }
+        { numero: 1, titulo: 'Planificación', descripcion: 'Definimos objetivos y requerimientos' },
+        { numero: 2, titulo: 'Desarrollo', descripcion: 'Implementamos la solución' },
+        { numero: 3, titulo: 'Pruebas', descripcion: 'Aseguramos la calidad' }
       ],
-      razones: [
-        'Expertos en mantenimiento web',
-        'Respuesta rápida a problemas',
-        'Actualizaciones regulares',
-        'Soporte personalizado'
-      ]
+      razones: ['Metodología ágil', 'Código limpio', 'Mantenimiento continuo']
     },
     {
-      titulo: 'Publicidad Digital',
+      titulo: 'Marketing Digital',
       icono: 'fa-bullhorn',
-      descripcion: 'Campañas efectivas en Google Ads y Meta Ads',
-      caracteristicas: [
-        'Análisis de mercado',
-        'Segmentación precisa',
-        'Optimización constante',
-        'Reportes detallados'
-      ],
-      descripcionDetallada: 'Maximizamos tu inversión en publicidad digital con campañas estratégicas en Google Ads y Meta Ads. Nuestro enfoque data-driven asegura resultados medibles y ROI positivo.',
-      beneficios: [
-        'Mayor visibilidad de marca',
-        'Tráfico cualificado',
-        'Conversiones optimizadas',
-        'ROI medible'
-      ],
+      descripcion: 'Estrategias de marketing digital para aumentar tu presencia en línea.',
+      caracteristicas: ['SEO y SEM', 'Redes sociales', 'Email marketing'],
+      descripcionDetallada: 'Implementamos estrategias integrales de marketing digital para aumentar tu visibilidad y generar leads.',
+      beneficios: ['Mayor alcance', 'Mejor ROI', 'Análisis detallado'],
       proceso: [
-        {
-          numero: 1,
-          titulo: 'Investigación',
-          descripcion: 'Analizamos tu mercado y competencia.'
-        },
-        {
-          numero: 2,
-          titulo: 'Estrategia',
-          descripcion: 'Desarrollamos una estrategia de publicidad personalizada.'
-        },
-        {
-          numero: 3,
-          titulo: 'Implementación',
-          descripcion: 'Lanzamos y optimizamos las campañas.'
-        },
-        {
-          numero: 4,
-          titulo: 'Análisis y Ajuste',
-          descripcion: 'Monitoreamos resultados y ajustamos estrategias.'
-        }
+        { numero: 1, titulo: 'Análisis', descripcion: 'Estudiamos tu mercado objetivo' },
+        { numero: 2, titulo: 'Estrategia', descripcion: 'Desarrollamos un plan personalizado' },
+        { numero: 3, titulo: 'Implementación', descripcion: 'Ejecutamos la estrategia' }
       ],
-      razones: [
-        'Certificados en Google Ads y Meta',
-        'Enfoque en resultados',
-        'Optimización constante',
-        'Transparencia total'
-      ]
+      razones: ['Resultados medibles', 'Enfoque en ROI', 'Actualización constante']
     },
     {
-      titulo: 'Auditoría SEO',
-      icono: 'fa-search',
-      descripcion: 'Análisis completo de tu sitio web y enlaces',
-      caracteristicas: [
-        'Análisis técnico',
-        'Auditoría de contenido',
-        'Revisión de backlinks',
-        'Recomendaciones personalizadas'
-      ],
-      descripcionDetallada: 'Realizamos una auditoría exhaustiva de tu sitio web, identificando oportunidades de mejora en SEO y detectando enlaces tóxicos que puedan estar afectando tu posicionamiento.',
-      beneficios: [
-        'Mejor posicionamiento SEO',
-        'Identificación de problemas',
-        'Estrategia clara de mejora',
-        'Protección contra penalizaciones'
-      ],
+      titulo: 'Consultoría IT',
+      icono: 'fa-laptop',
+      descripcion: 'Asesoramiento experto en tecnología para optimizar tu negocio.',
+      caracteristicas: ['Análisis de procesos', 'Optimización', 'Seguridad'],
+      descripcionDetallada: 'Proporcionamos asesoramiento estratégico para implementar y optimizar soluciones tecnológicas en tu empresa.',
+      beneficios: ['Mejora de procesos', 'Reducción de costos', 'Mayor seguridad'],
       proceso: [
-        {
-          numero: 1,
-          titulo: 'Análisis Técnico',
-          descripcion: 'Evaluamos la estructura y rendimiento técnico.'
-        },
-        {
-          numero: 2,
-          titulo: 'Auditoría de Contenido',
-          descripcion: 'Analizamos la calidad y optimización del contenido.'
-        },
-        {
-          numero: 3,
-          titulo: 'Revisión de Enlaces',
-          descripcion: 'Identificamos enlaces tóxicos y oportunidades.'
-        },
-        {
-          numero: 4,
-          titulo: 'Reporte y Recomendaciones',
-          descripcion: 'Proporcionamos un plan de acción detallado.'
-        }
+        { numero: 1, titulo: 'Diagnóstico', descripcion: 'Evaluamos tu situación actual' },
+        { numero: 2, titulo: 'Planificación', descripcion: 'Desarrollamos un plan de acción' },
+        { numero: 3, titulo: 'Implementación', descripcion: 'Ejecutamos las mejoras' }
       ],
-      razones: [
-        'Expertos en SEO técnico',
-        'Herramientas avanzadas',
-        'Análisis exhaustivo',
-        'Recomendaciones prácticas'
-      ]
+      razones: ['Experiencia comprobada', 'Enfoque personalizado', 'Resultados garantizados']
     }
   ];
 
-  abrirModal(servicio: Servicio) {
+  abrirModal(servicio: Servicio): void {
     this.servicioSeleccionado = servicio;
     this.modalAbierto = true;
     document.body.style.overflow = 'hidden';
   }
 
-  cerrarModal() {
+  cerrarModal(): void {
     this.modalAbierto = false;
     this.servicioSeleccionado = null;
     document.body.style.overflow = 'auto';
   }
 
-  contactar() {
+  contactar(): void {
     this.cerrarModal();
-    // Aquí podrías redirigir al formulario de contacto o abrir un modal de contacto
   }
 }
