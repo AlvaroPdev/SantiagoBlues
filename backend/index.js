@@ -6,9 +6,23 @@ const { enviarCorreoContacto } = require('./mailer');
 const compression = require('compression');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const formLimiter = require('./middleware/formLimiter');
 require('dotenv').config();
 
 const app = express();
+
+// Ruta de prueba simple
+app.get('/test', (req, res) => {
+  res.json({
+    status: 'success',
+    message: 'Ruta de prueba funcionando',
+    config: {
+      helmet: 'Activo',
+      rateLimit: 'Activo',
+      cors: 'Activo'
+    }
+  });
+});
 
 // Configuración de seguridad y rendimiento
 app.use(helmet({
@@ -85,11 +99,32 @@ const errorHandler = (err, req, res, next) => {
 };
 
 // 📬 Ruta para formulario de contacto
-app.post('/contacto', async (req, res, next) => {
+app.post('/contacto', formLimiter, async (req, res, next) => {
   try {
     const { nombre, empresa, web, email, telefono, mensaje } = req.body;
+    
+    // Validación básica
+    if (!nombre || !email || !mensaje) {
+      return res.status(400).json({ 
+        status: 'error',
+        message: 'Por favor completa todos los campos requeridos.' 
+      });
+    }
+
+    // Validación de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ 
+        status: 'error',
+        message: 'Por favor ingresa un email válido.' 
+      });
+    }
+
     await enviarCorreoContacto({ nombre, empresa, web, email, telefono, mensaje });
-    res.status(200).json({ mensaje: 'Mensaje enviado correctamente.' });
+    res.status(200).json({ 
+      status: 'success',
+      message: 'Mensaje enviado correctamente.' 
+    });
   } catch (err) {
     next(err);
   }
@@ -236,9 +271,6 @@ app.get('/citas', async (req, res, next) => {
     next(err);
   }
 });
-
-// Middleware de manejo de errores
-app.use(errorHandler);
 
 // 🚀 Iniciar servidor
 const PORT = process.env.PORT || 3000;
