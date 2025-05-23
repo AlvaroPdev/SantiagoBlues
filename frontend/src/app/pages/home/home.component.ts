@@ -7,11 +7,22 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { ChatbotComponent } from "../../components/chatbot/chatbot.component";
 import { LogosComponent } from "../../components/logos/logos.component";
 import { PerfilComponent } from "../../components/perfil/perfil.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent, ServiciosComponent, AgendarComponent, ContactoComponent, FooterComponent, ChatbotComponent, LogosComponent, PerfilComponent],
+  imports: [
+    CommonModule,
+    NavbarComponent,
+    ServiciosComponent,
+    AgendarComponent,
+    ContactoComponent,
+    FooterComponent,
+    ChatbotComponent,
+    LogosComponent,
+    PerfilComponent
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
