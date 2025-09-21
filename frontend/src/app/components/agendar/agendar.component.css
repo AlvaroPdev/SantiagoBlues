@@ -1,4 +1,3 @@
-/* --------- Contenedor principal ---------- */
 .container {
   position: relative;
   min-height: 100vh;
@@ -24,7 +23,6 @@
   z-index: -1;
 }
 
-/* --------- Introducción y Botón --------- */
 .meeting-intro {
   margin-bottom: 1rem;
 }
@@ -66,7 +64,6 @@
   transform: translateY(-2px);
 }
 
-/* --------- Modal y Calendly ---------- */
 .modal {
   display: none;
   position: fixed;
@@ -131,7 +128,6 @@
   border-radius: 10px;
 }
 
-/* --------- Responsive --------- */
 @media (max-width: 768px) {
   .container {
     padding: 1rem;

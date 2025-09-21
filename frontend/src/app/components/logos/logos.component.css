@@ -1,45 +1,44 @@
 .logos-container {
     text-align: center;
     padding: 40px 20px;
-    background-color: #f8f9fa; /* Color de fondo similar al de la imagen */
+    background-color: #f8f9fa;
   }
-  
+
   .logos-container h2 {
     margin-bottom: 30px;
     font-size: 24px;
     color: #333;
   }
-  
+
   .logos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Columnas responsivas */
-    gap: 30px; /* Espacio entre logos */
-    justify-items: center; /* Centrar logos en cada celda */
-    align-items: center; /* Centrar logos verticalmente */
-    max-width: 960px; /* Ancho máximo de la cuadrícula */
-    margin: 0 auto; /* Centrar la cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
   }
-  
+
   .logos-grid img {
     display: block;
-    width: 120px; /* Tamaño fijo en lugar de max-width */
-    height: 40px; /* Altura fija para mantener proporción */
-    object-fit: contain; /* Asegura que la imagen se ajuste manteniendo su proporción */
+    width: 120px;
+    height: 40px;
+    object-fit: contain;
     opacity: 0.8;
     transition: all 0.3s ease;
   }
-  
+
   @media (max-width: 768px) {
     .logos-grid img {
         width: 100px;
         height: 35px;
     }
   }
-  
+
   @media (max-width: 480px) {
     .logos-grid img {
         width: 80px;
         height: 30px;
     }
   }
-  

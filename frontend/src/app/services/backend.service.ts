@@ -14,7 +14,7 @@ interface CacheItem<T> {
 export class BackendService {
   private API_URL = 'http://localhost:3000';
   private cache = new Map<string, CacheItem<any>>();
-  private readonly CACHE_DURATION = 5 * 60 * 1000; // 5 minutos
+  private readonly CACHE_DURATION = 5 * 60 * 1000;
 
   constructor(private http: HttpClient) {}
 

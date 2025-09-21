@@ -57,7 +57,6 @@
   z-index: 1;
 }
 
-/* Fallback para cuando la imagen no carga */
 .form-image::after {
   content: '';
   position: absolute;
@@ -156,10 +155,10 @@
   .form-container {
     grid-template-columns: 1fr;
   }
-  
+
   .form-image {
     min-height: 300px;
-    order: -1; /* Mover la imagen arriba en móviles */
+    order: -1;
   }
 }
 
@@ -167,17 +166,17 @@
   .contacto {
     padding: 2rem 0;
   }
-  
+
   .section-title {
     font-size: 2rem;
     margin-bottom: 0.8rem;
   }
-  
+
   .section-description {
     font-size: 1.1rem;
     margin-bottom: 2rem;
   }
-  
+
   .contact-form {
     padding: 1.5rem;
   }
@@ -188,7 +187,7 @@
     font-size: 1.8rem;
     margin-bottom: 0.6rem;
   }
-  
+
   .section-description {
     font-size: 1rem;
     margin-bottom: 1.5rem;
