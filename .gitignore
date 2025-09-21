@@ -17,6 +17,7 @@ frontend/.vscode/
 # Sistema operativo
 .DS_Store
 Thumbs.db
+.vscode/
 
 # Otros
 .idea/
