@@ -1,0 +1,41 @@
+# Node.js
+node_modules/
+dist/
+.env
+npm-debug.log
+
+# Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/cache/
+frontend/.angular/local/
+frontend/.vscode/
+
+# Logs
+*.log
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Otros
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Cache
+.cache/
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Backend
+backend/node_modules/
+backend/dist/
+backend/.env
+backend/.vscode/
+
+# Test coverage
+coverage/
