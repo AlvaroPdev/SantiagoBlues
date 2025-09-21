@@ -11,7 +11,6 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// 📩 Para formulario de contacto
 async function enviarCorreoContacto({ nombre, empresa, web, email, telefono, mensaje }) {
   const mailOptions = {
     from: `"Formulario de Contacto" <${process.env.CORREO_ORIGEN}>`,
@@ -31,7 +30,6 @@ async function enviarCorreoContacto({ nombre, empresa, web, email, telefono, men
   await transporter.sendMail(mailOptions);
 }
 
-// Exportar ambas funciones
 module.exports = {
   enviarCorreoContacto
 };

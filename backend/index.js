@@ -10,7 +10,6 @@ require('dotenv').config();
 
 const app = express();
 
-// Configuración de seguridad y rendimiento
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
@@ -37,18 +36,15 @@ app.use(cors({
 }));
 app.use(bodyParser.json());
 
-// Configuración de rate limiting
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutos
-  max: 100 // límite de 100 peticiones por ventana
+  windowMs: 15 * 60 * 1000, 
+  max: 100 
 });
 app.use(limiter);
 
-// Cache en memoria para respuestas frecuentes
 const cache = new Map();
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutos
+const CACHE_DURATION = 5 * 60 * 1000; 
 
-// Función para normalizar el texto
 const normalizarTexto = (texto) => {
   return texto.toLowerCase()
     .normalize('NFD')
@@ -57,13 +53,11 @@ const normalizarTexto = (texto) => {
     .trim();
 };
 
-// Función para verificar si el mensaje contiene alguna palabra clave
 const contienePalabraClave = (mensaje, palabras) => {
   const mensajeNormalizado = normalizarTexto(mensaje);
   return palabras.some(palabra => mensajeNormalizado.includes(normalizarTexto(palabra)));
 };
 
-// Función para determinar si una interacción es relevante
 const esInteraccionRelevante = (mensaje, respuesta) => {
   const mensajeNormalizado = normalizarTexto(mensaje);
   const palabrasRelevantes = [
@@ -78,13 +72,11 @@ const esInteraccionRelevante = (mensaje, respuesta) => {
          respuesta.includes('botón "Agendar"');
 };
 
-// Middleware para manejo de errores
 const errorHandler = (err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ mensaje: 'Error interno del servidor' });
 };
 
-// 📬 Ruta para formulario de contacto
 app.post('/contacto', async (req, res, next) => {
   try {
     const { nombre, empresa, web, email, telefono, mensaje } = req.body;
@@ -95,7 +87,6 @@ app.post('/contacto', async (req, res, next) => {
   }
 });
 
-// 💬 Ruta del chatbot con lógica de respuesta + registro
 app.post('/chatbot', async (req, res, next) => {
   try {
     const { mensaje } = req.body;
@@ -103,7 +94,6 @@ app.post('/chatbot', async (req, res, next) => {
       return res.status(400).json({ mensaje: 'El mensaje es requerido' });
     }
 
-    // Verificar caché
     const cacheKey = `chatbot:${mensaje}`;
     const cachedResponse = cache.get(cacheKey);
     if (cachedResponse && Date.now() - cachedResponse.timestamp < CACHE_DURATION) {
@@ -113,7 +103,6 @@ app.post('/chatbot', async (req, res, next) => {
     let respuesta = 'Lo siento, no entendí tu pregunta. ¿Podrías reformularla?';
     let mostrarBoton = false;
 
-    // Palabras clave predefinidas
     const palabrasClave = {
       precio: [
         'precio', 'precios', 'cuanto', 'cuánto', 'costo', 'costos', 
@@ -164,7 +153,6 @@ app.post('/chatbot', async (req, res, next) => {
       ]
     };
 
-    // Respuestas predefinidas
     const respuestas = {
       precio: 'Los precios varían según las necesidades específicas de cada proyecto. Para conocer el valor exacto de tu proyecto, ve al botón "Agendar" en el inicio de nuestra web y agenda una videollamada. En la llamada podremos evaluar tus necesidades y darte un presupuesto personalizado.',
       ubicacion: 'Estamos ubicados en Santiago, Chile. Trabajamos principalmente de forma remota para ofrecer un mejor servicio y precios más accesibles.',
@@ -177,7 +165,6 @@ app.post('/chatbot', async (req, res, next) => {
       saludo: '¡Hola! 👋 Soy el asistente de SantiagoBlues. ¿En qué puedo ayudarte hoy?'
     };
 
-    // Buscar coincidencias
     for (const [tipo, palabras] of Object.entries(palabrasClave)) {
       if (contienePalabraClave(mensaje, palabras)) {
         respuesta = respuestas[tipo];
@@ -185,13 +172,11 @@ app.post('/chatbot', async (req, res, next) => {
       }
     }
 
-    // Guardar en caché
     cache.set(cacheKey, {
       data: { respuesta },
       timestamp: Date.now()
     });
 
-    // Guardar en base de datos solo si es relevante
     if (esInteraccionRelevante(mensaje, respuesta)) {
       try {
         await db.execute(
@@ -210,7 +195,6 @@ app.post('/chatbot', async (req, res, next) => {
   }
 });
 
-// 🧾 Ruta para consultar citas con caché
 app.get('/citas', async (req, res, next) => {
   try {
     const cacheKey = 'citas';
@@ -237,10 +221,8 @@ app.get('/citas', async (req, res, next) => {
   }
 });
 
-// Middleware de manejo de errores
 app.use(errorHandler);
 
-// 🚀 Iniciar servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);

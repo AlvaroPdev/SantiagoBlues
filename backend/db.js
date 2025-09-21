@@ -3,9 +3,9 @@ const mysql = require('mysql2/promise');
 const db = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: '12345', // <-- cámbiala por la real
+  password: '12345', 
   database: 'santiagoblues',
-  port: 3307 // o 3307 si usaste otro puerto durante la instalación
+  port: 3307 
 });
 
 module.exports = { db };
